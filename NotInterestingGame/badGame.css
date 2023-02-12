@@ -1,16 +1,24 @@
-#a0 {
+body{
+    margin: 30px 470px;
+    padding: 30px;
+    border: 5px solid bisque;
+}
+
+.a0 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 100px;
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background-color: bisque;
 }
+#a0{
+margin-left: 120px;
+}
 
-.a1{
-    padding: 50px;
+.paddings{
+    padding: 10px 0;
 }
 

@@ -12,6 +12,7 @@ function RERENDER(value, moneys) {
     document.getElementById("a00").innerHTML = moneys
     duoble = moneys
 }
+
 function resetCounter() {
     num = 0;
     RERENDER(num, duoble + 10);

@@ -28,3 +28,12 @@
 //     a++
 //     console.log(a)
 // }
+
+
+// const  multNums = (nums) =>  nums * nums//this is callback
+// const  minusNums = (nums) =>  nums * (nums/2).toFixed()//this is callback
+// const  sumNums = (nums) =>  nums + nums//this is callback
+//
+//
+//
+

@@ -7,6 +7,7 @@ let duoble;
 function incrementClick() {
     RERENDER(++num, --money);
 }
+
 function RERENDER(value, moneys) {
     document.getElementById("a0").innerHTML = value;
     document.getElementById("a00").innerHTML = moneys

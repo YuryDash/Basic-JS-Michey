@@ -3,7 +3,6 @@ let countWindow = 3
 let count = 0;
 document.querySelector("span").innerText = countWindow.toString();
 
-
 const riddles = [
     {
         id: 1,
@@ -35,7 +34,7 @@ const riddles = [
         "плавец, чемпион ММА, чемпион МУАЙ ТАЙ, чемпион по БОРЬБЕ, чемпион по БОЕВОМУ САМБО, чемпион по БОКСУ," +
         " отлчник в школе (9 баллов) делающий 3 ошибки в слове (кЕрпЕчЯ), непокоренный и несломленный, НЕПРЕВЗАЙДЕННЫЙ!!! => ", "пиздаболл..."]
     }
-]
+];
 
 function incrementCLick(){
     RERENDER(--countWindow)
@@ -48,12 +47,11 @@ function RERENDER(countWindow){
 const counter = () => {
      return ++count
  }
+
 // const counterWindow = () => {
 //     console.log(countWindow)
 //     return --countWindow
 // }
-
-
 
 window.onload = function () {
     document.getElementById('riddle').innerText = riddles[3].question;
@@ -71,6 +69,7 @@ window.onload = function () {
 }
 
 let guessedAnswer;
+
 function check() {
     if (counter() <= 3){
         const input = document.getElementsByTagName('input')[0];
@@ -85,7 +84,7 @@ function check() {
 
 
     } else {
-
+// = === === === === = === = === = = = = = = = = = = = = = = = = = = =
     }
 }
 

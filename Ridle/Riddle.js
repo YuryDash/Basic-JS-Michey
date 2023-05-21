@@ -2,13 +2,13 @@
 let countWindow = 3
 let count = 0;
 document.querySelector("span").innerText = countWindow.toString();
-
+let answerNum = 0;
 const riddles = [
     {
         id: 1,
         question: 'The  . . . .(  )  method executes a provided function once for each array element.',
         correctAnswer: 'foreach',
-        hints: ["This is iterative Method", "function once for each element in an array in ascending-index order"]
+        hints: ["This is iterative Method", "Function once for each element in an array in ascending-index order"]
         // checkAnswer(answer){
         //    return  answer === 'forEach' ? 'you win' : 'you looser'
         // }
@@ -48,43 +48,44 @@ const counter = () => {
      return ++count
  }
 
-// const counterWindow = () => {
-//     console.log(countWindow)
-//     return --countWindow
-// }
 
-window.onload = function () {
-    document.getElementById('riddle').innerText = riddles[3].question;
-
-    switch (riddles.map(el => el.id)) {
-        case "1":
-            return document.getElementById('riddle').innerText = riddles[0].question;
-        case "2":
-            return document.getElementById('riddle').innerText = riddles[1].question;
-        case "3":
-            return document.getElementById('riddle').innerText = riddles[2].question;
-        case "4":
-            return document.getElementById('riddle').innerText = riddles[3].question;
+ function riddleText(answerNum) {
+     return document.getElementById('riddle').innerText = riddles[answerNum].question;
+ }
+ function riddleHints() {
+    if ((count - 1) < 2){
+        return document.getElementById('hints').innerText = riddles[answerNum].hints[count-1];
+    } else {
+        return document.getElementById('hints').innerText = " -LOSHOK-"
     }
-}
+ }
+riddleText(answerNum)
+
+
 
 let guessedAnswer;
 
+
 function check() {
+    console.log('keyStart')
     if (counter() <= 3){
-        const input = document.getElementsByTagName('input')[0];
-        guessedAnswer = input.value.toLowerCase();
+        guessedAnswer = document.getElementsByTagName('input')[0].value.toLowerCase();
         incrementCLick()
-        // console.log(guessedAnswer)
     }
-
-
-    if (guessedAnswer.trim() === riddles[3].correctAnswer) {
+    if (guessedAnswer.trim() === riddles[answerNum].correctAnswer && guessedAnswer !== '') {
+        answerNum++
+        riddleText(answerNum)
+        countWindow = 3
+        document.getElementById('count').innerHTML = countWindow
+        count = 0
         alert('suchenok sharit')
-
-
     } else {
-// = === === === === = === = === = = = = = = = = = = = = = = = = = = =
+        riddleHints(count)
     }
 }
 
+function checkKey() {
+    document.getElementsByTagName('input')[0].addEventListener('keydown', function (e) {
+        return e.key === "Enter" ? check() : console.log('keyINTO')
+    });
+}

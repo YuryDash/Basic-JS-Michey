@@ -121,7 +121,6 @@ function censor() {
     }
 
 }
-
 let a = censor();
 console.log(a('lol', 'nastasya'));
 console.log(a('Моя жена lol , она моя lol :D'));

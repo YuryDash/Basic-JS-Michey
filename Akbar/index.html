@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    //let arr = [7,6,1,2,3,4,5]
+    // let b = arr.length % 2
+    // let c = Math.ceil(arr.length / 2) - b
+    // console.log(arr[c]);
+
+    let arr = [7,6,1,2,12,44,30,4,5,4,1]
+
+    const middleIndex = Math.floor(arr.length / 2);
+
+    const middleElement = arr.reduce((acc, currentValue, currentIndex) => {
+        if (currentIndex === middleIndex) {
+             acc = currentValue;
+        }
+        return acc;
+    }, 0);
+
+    console.log(middleElement);
+
+</script>
+</html>
